@@ -101,6 +101,15 @@ a {
 
 @media (prefers-color-scheme: dark) {
 	html {
-		color-scheme: dark;
+		color-scheme: ;
 	}
+}
+
+//Sliders
+.slick-dots li.slick-active button:before {
+  color: #007BFF !important;
+}
+
+.slick-dots li button:before {
+  color: #007BFF !important;
 }

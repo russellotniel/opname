@@ -6,6 +6,7 @@ const SliderLogin = () => {
   var settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
     arrows: false,
     speed: 500,
     slidesToShow: 1,

@@ -14,7 +14,7 @@ const SliderLogin = () => {
   }
 
   return (
-    <Slider {...settings} className='my-10 text-center'>
+    <Slider {...settings} className='mt-10 mb-8 text-center'>
       <div className="px-10">
         <h1 className='text-black font-bold'>Apa itu FitAJa!? 1</h1>
         <p className='text-gray-600 my-3 text-sm'>Layanan kesehatan digital yang terintegrasi dengan berbagai asuransi sebagai solusi sehat, cepat dan akurat.</p>

@@ -13,7 +13,8 @@ const LandingPage = (props) => {
 
 	return (
         <div>
-            <img className="object-contain" src={'logo.png'} style={{width:400, height: 800}}/>
+            {/* <img className="object-contain" src={'logo.png'} style={{width:400, height: 800}}/> */}
+            <img className="object-contain px-3" src={'logo.png'} style={{width:400, height: '85vh'}}/>
         </div>
 	);
 };

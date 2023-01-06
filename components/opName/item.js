@@ -22,7 +22,7 @@ const Item = ({data}) => {
             </div>
           </div>
 
-          <div className="flex flex-row bg-white py-5 px-1 ">
+          <div className="flex flex-row bg-white py-5 px-1 rounded-b-lg">
             <div className="flex ">
               <h4 class="px-2 text-black whitespace-nowrap text-left">Status {data.status}</h4>
             </div>

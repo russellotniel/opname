@@ -24,7 +24,7 @@ const Login = () => {
   });
   return (
     <MobileLayout>
-      <Image src={logofais} />
+      <Image src={logofais} style={{ width: '100vw' , height: '32vh'}} />
       <SliderLogin />
 
       <form onSubmit={formik.handleSubmit} className="container px-5 mt-2">

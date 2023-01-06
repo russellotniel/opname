@@ -5,8 +5,8 @@ const Item = ({data}) => {
   return (
     <div>
       <a href={`/opname/detail/${data.id}`}>
-        <div className="flex flex-col bg-white rounded-b-lg shadow-md mx-2 my-2">
-          <div className="flex flex-row bg-blue-500 py-5 px-1 justify-between rounded-t-lg">
+        <div className="flex flex-col bg-blue-500  rounded-lg shadow-lg mx-2 my-5 hover:drop-shadow-2xl hover:bg-blue-400">
+          <div className="flex flex-row py-5 px-1 justify-between rounded-t-lg ">
             <div className="flex items-center">
               <h4 class="px-2 text-black whitespace-nowrap">{data.name}</h4>
             </div>

@@ -107,9 +107,16 @@ a {
 
 //Sliders
 .slick-dots li.slick-active button:before {
-  color: #007BFF !important;
+	color: #007bff !important;
 }
 
 .slick-dots li button:before {
-  color: #007BFF !important;
+	color: #007bff !important;
+}
+
+.bg-img {
+	background-image: url('../public/images/background.png');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 }

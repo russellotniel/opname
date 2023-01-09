@@ -22,8 +22,8 @@ const DetailItem = ({ data }) => {
                 <h4 class="text-black whitespace-nowrap font-bold">
                   {data.name}
                 </h4>
-                <h4 class="text-black whitespace-nowrap pt-2 text-xs text-slate-600">
-                  Check your child's immunization history here
+                <h4 class="whitespace-nowrap pt-2 text-xs text-slate-600">
+                  {`Check your child's immunization history here`}
                 </h4>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import MobileLayout from '../components/layout/MobileLayout';
 import Image from 'next/image';
-import logofais from '../images/FAISBlue.png';
+import logofais from '../public/images/Logo Finance and Accounting Information System (FAIS).png';
 import SliderLogin from '../components/slider/SliderLogin';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';

@@ -11,22 +11,40 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { username, password } = credentials;
-        const res = await fetch("https://dummyjson.com/auth/login", {
-          method: "POST",
-          keepalive: true,
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username,
-            password,
-            expiresInMins: 60,
-          }),
-        })
-
+        // const res = await fetch("https://dummyjson.com/auth/login", {
+        //   method: "POST",
+        //   keepalive: true,
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({
+        //     username,
+        //     password,
+        //     expiresInMins: 60,
+        //   }),
+        // })
+        const res = await fetch(
+          "https://api-authentication.kalbe.co.id/api/Login",
+          {
+            method: "POST",
+            keepalive: true,
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              username,
+              password,
+              getProfile: true,
+            }),
+          }
+        );
         const user = res.json();
-        if (res.ok && user) return user;
-        else return null;
+        if (res.ok && user) {
+          const token = user.accessToken;
+          const decoded = jwt_decode(token);
+          console.log(decoded);
+          return decoded;
+        } else return null;
       },
     }),
   ],
@@ -37,7 +55,6 @@ export const authOptions = {
   pages: {
     signIn: "/login",
   },
-  
 };
 
 export default NextAuth(authOptions);

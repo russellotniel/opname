@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const DetailItem = ({ data }) => {
   return (
@@ -7,7 +7,7 @@ const DetailItem = ({ data }) => {
       <a href={`/`}>
         <div className="flex flex-col bg-white rounded-b-2xl shadow-lg mx-2 my-5 hover:drop-shadow-2xl">
           <div className="flex flex-row py-5 px-2 rounded-t-lg ">
-            <div className="flex items-center pl-3">
+            {/* <div className="flex items-center pl-3">
               <Image
                 className="rounded-lg"
                 src="/images/Logo Finance and Accounting Information System (FAIS).png"
@@ -15,7 +15,7 @@ const DetailItem = ({ data }) => {
                 width={90}
                 height={90}
               />
-            </div>
+            </div> */}
 
             <div className="flex items-center pl-3">
               <div className="flex flex-col px-2 text-sm">
@@ -28,7 +28,7 @@ const DetailItem = ({ data }) => {
               </div>
             </div>
 
-            <div className="flex pl-3">
+            <div className="flex pl-7">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="red"

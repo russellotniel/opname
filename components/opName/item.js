@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
-const Item = ({data}) => {
+const Item = ({ data }) => {
   return (
     <div>
       <a href={`/opname/detail/${data.id}`}>
@@ -11,7 +11,7 @@ const Item = ({data}) => {
               <h4 class="px-2 text-black whitespace-nowrap">{data.name}</h4>
             </div>
 
-            <div className="flex items-center">
+            {/* <div className="flex items-center">
               <Image
                 className=""
                 src="/images/Logo Finance and Accounting Information System (FAIS)-06.png"
@@ -19,12 +19,14 @@ const Item = ({data}) => {
                 width={150}
                 height={200}
               />
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-row bg-white py-5 px-1 rounded-b-lg">
             <div className="flex ">
-              <h4 class="px-2 text-black whitespace-nowrap text-left">Status {data.status}</h4>
+              <h4 class="px-2 text-black whitespace-nowrap text-left">
+                Status {data.status}
+              </h4>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import SliderLogin from "../components/slider/SliderLogin";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   const formik = useFormik({
@@ -18,13 +19,18 @@ const Login = () => {
       password: Yup.string().required("Required!"),
     }),
 
-    onSubmit: (data) => {
-      console.log(data);
+    onSubmit: async (values) => {
+      const result = await signIn("credentials", {
+        username: values.username,
+        password: values.password,
+        redirect: true,
+        callbackUrl: "/home",
+      });
     },
   });
   return (
     <MobileLayout>
-      <Image src={logofais} style={{ width: "100vw", height: "32vh" }} />
+      <Image src={logofais} style={{ width: "100vw", height: "32vh" }} alt=""/>
       <SliderLogin />
       <main className="mb-5">
         <form onSubmit={formik.handleSubmit} className="container px-5">
@@ -93,7 +99,8 @@ const Login = () => {
           </div>
         </form>
 
-        {/* <div className="container px-5 text-center mt-5">
+        <div className="container px-5 text-center mt-5">
+          {/* <div className='container text-center mt-5'> */}
           <p className="text-xs">
             Dengan masuk atau daftar kamu sudah menyetujui
             <br />
@@ -101,7 +108,7 @@ const Login = () => {
             <span style={{ color: "orange" }}>Kebijakan Privasi</span> dari
             FitAja!
           </p>
-        </div> */}
+        </div>
       </main>
     </MobileLayout>
   );

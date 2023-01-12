@@ -1,9 +1,13 @@
 import Image from "next/image";
 import React from "react";
 import MobileLayout from "/components/layout/MobileLayout.js";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const Index = () => {
+  const { data: session, status } = useSession();
+
+  console.log(session);
+
   return (
     <MobileLayout>
       <div className="my-5 mx-2">

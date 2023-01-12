@@ -5,7 +5,7 @@ import SliderLogin from "../components/slider/SliderLogin";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 
 const Login = () => {
   const formik = useFormik({
@@ -30,7 +30,7 @@ const Login = () => {
   });
   return (
     <MobileLayout>
-      <Image src={logofais} style={{ width: "100vw", height: "32vh" }} alt=""/>
+      <Image src={logofais} style={{ width: "100vw", height: "32vh" }} alt="" />
       <SliderLogin />
       <main className="mb-5">
         <form onSubmit={formik.handleSubmit} className="container px-5">
@@ -113,6 +113,25 @@ const Login = () => {
     </MobileLayout>
   );
 };
+
+export async function getServerSideProps(ctx) {
+  const { req, res } = ctx;
+
+  const sessionData = await getSession(ctx);
+
+  if (sessionData) {
+    return {
+      redirect: {
+        destination: "/home",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
 
 export default Login;
 
